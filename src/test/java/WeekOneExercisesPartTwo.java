@@ -58,14 +58,10 @@ public class WeekOneExercisesPartTwo {
     private float calculateBAC(char gender, int weightInPounds, int ouncesOfAlcoholConsumed, float hoursSinceLastDrink) {
         // TODO RESPONSE: In the PluralSight video, you learned of three ways to make decisions based on the value
         //   in the gender variable. Implement this method using one way, and describe how the other ways could work.
+        // answer: I initially used If-else, but changed it to switch because there were less lines of code.
+        // The other way to make a decision is using a relational operator, but it wouldn't make a lot of sense for these exercises.
         float weightQuotient = (5.14f / weightInPounds);
-        float alcoholDistributionRatio = 0.00f;
-
-        if(gender == 'M')
-            alcoholDistributionRatio = 0.73f;
-        else
-            alcoholDistributionRatio = 0.66f;
-
+        float alcoholDistributionRatio = gender == 'M'? 0.73f : 0.66f;
         float peakAlcoholContent = (weightQuotient * ouncesOfAlcoholConsumed * alcoholDistributionRatio);
         float lastConsumptionInterval = (hoursSinceLastDrink * 0.015f);
         return (peakAlcoholContent - lastConsumptionInterval);
