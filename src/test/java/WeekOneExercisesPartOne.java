@@ -35,8 +35,8 @@ public class WeekOneExercisesPartOne {
     }
 
     @Test
-    @Disabled
-    // TODO RESPONSE: What operator is used to determine remainders?
+    //@Disabled
+    // TODO RESPONSE: What operator is used to determine remainders? answer: %
     public void leftoversWithFivePeopleAndTwoPizzas() {
         int numberOfPeople = 5;
         int numberOfEightSlicePizzas = 2;
@@ -52,7 +52,8 @@ public class WeekOneExercisesPartOne {
     }
 
     private int determineLeftoverSlicesOfPizza(int numberOfPizzas, int numberOfPeople) {
-        return 0;
+        int numberOfSlicesPerPizza = 8;
+        return (numberOfPizzas * numberOfSlicesPerPizza % numberOfPeople);
     }
 
     @Test
