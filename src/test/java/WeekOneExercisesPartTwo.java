@@ -7,10 +7,10 @@ public class WeekOneExercisesPartTwo {
     // TODO: remove @Disabled attribute, make the test run green, and then move on to the next test
     // TODO: remember to refactor after you have a green test (never refactor when you have a failing test)
 
-    // TODO Response: Why would you never refactor if you had a failing test?
+    // TODO Response: Why would you never refactor if you had a failing test? answer: You don't know what you might be removing to make it pass since it never passed in the first place
 
     @Test
-    @Disabled
+    //@Disabled
     public void bloodAlcoholLevelForAMale() {
         char gender = 'M';
         int weightInPounds = 185;
@@ -58,6 +58,10 @@ public class WeekOneExercisesPartTwo {
     private float calculateBAC(char gender, int weightInPounds, int ouncesOfAlcoholConsumed, float hoursSinceLastDrink) {
         // TODO RESPONSE: In the PluralSight video, you learned of three ways to make decisions based on the value
         //   in the gender variable. Implement this method using one way, and describe how the other ways could work.
-        return 0.0f;
+        float weightQuotient = (5.14f / weightInPounds);
+        float alcoholDistributionRatio = 0.73f;
+        float peakAlcoholContent = (weightQuotient * ouncesOfAlcoholConsumed * alcoholDistributionRatio);
+        float lastConsumptionInterval = (hoursSinceLastDrink * 0.015f);
+        return (peakAlcoholContent - lastConsumptionInterval);
     }
 }
