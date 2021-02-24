@@ -57,9 +57,9 @@ public class WeekOneExercisesPartOne {
     }
 
     @Test
-    @Disabled
+    //@Disabled
     // TODO RESPONSE: In the variable declarations below, why is it necessary to place
-    //  an 'f' after 4.3 but not after 1500 or 4?
+    //  an 'f' after 4.3 but not after 1500 or 4? answer: It contains a fractional portion/decimal and this indicates it is a float literal.
     public void simpleInterestReturnsCorrectAmount() {
         float principalAmount = 1500;
         float interestRateAsAPercent = 4.3f;
@@ -81,6 +81,7 @@ public class WeekOneExercisesPartOne {
      * @return
      */
     private float calcSimpleInterest(float principal, float percentInterestRate, float numberOfYears) {
-        return 0;
+        float interestRate = (percentInterestRate / 100);
+        return (principal * (1 + (interestRate * numberOfYears)));
     }
 }
