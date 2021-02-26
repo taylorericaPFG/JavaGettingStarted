@@ -31,11 +31,11 @@ public class WeekTwoExercisePartOne {
     // TODO: remove @Disabled attribute, make the test run green, and then move on to the next test
     // TODO: remember to refactor after you have a green test (never refactor when you have a failing test)
 
-    // TODO Response: Why would you never refactor if you had a failing test?
+    // TODO Response: Why would you never refactor if you had a failing test? answer: You don't know what you might be removing to make it pass since it never passed in the first place
 
     @Test
-    @Disabled
-    // TODO Response: Why did we start with this test?
+    //@Disabled
+    // TODO Response: Why did we start with this test? answer: We know whatever the roll count if there are 0 pins, the score will be 0.  This one passes without having to make any code changes.
     public void whenRollingAllGutterBallsScoreIsZero() {
         rollMany(20, 0);
 
