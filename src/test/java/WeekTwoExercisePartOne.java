@@ -46,7 +46,7 @@ public class WeekTwoExercisePartOne {
 
     @Test
     //@Disabled
-    // TODO Response:  If the above test works with open frames, why is this test necessary? answer: To verify that if the number of pins each roll is other than 0 (1 in this case) the score changes as expected.  This test also passes without any code changes.
+    // TODO Response:  If the above test works with open frames, why is this test necessary? answer: To verify that if the number of pins each roll is other than 0 (1 in this case) and is the same for each roll the score changes as expected.  This test also passes without any code changes.
     public void whenRollingOpenFrameScoreIsSumOfRolls() {
         rollMany(20, 1);
 
@@ -57,7 +57,7 @@ public class WeekTwoExercisePartOne {
 
     // TODO CODE: Start here
     @Test
-    @Disabled
+    //@Disabled
     public void whenRollingSpareFrameScoreIsTenPlusNextRoll() {
         bowlingGame.roll(3);
         bowlingGame.roll(7);
