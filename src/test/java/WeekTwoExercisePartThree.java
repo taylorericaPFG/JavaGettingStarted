@@ -3,9 +3,8 @@ import java.time.LocalDate;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Friday the thirteenth is fabled to be an 'unlucky' day.  Implement the code below to
@@ -89,6 +88,22 @@ public class WeekTwoExercisePartThree {
     public void sendingTwentyNinteenReturnsTwoFridayTheThirteenths() {
         //  TODO: write this test and, if necessary, make any changes to make it pass
         //  TODO: don't forget to commit after passing the test
+        LocalDate[] actual = unluckyDatesByYear(2019);
+        LocalDate[] expected = new LocalDate[]{
+                LocalDate.of(2019, 9, 13),
+                LocalDate.of(2019, 12, 13),
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null};
+
+        assertEquals(2, expected.length);
     }
 
     @Test
