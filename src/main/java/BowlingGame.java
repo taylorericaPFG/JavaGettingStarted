@@ -21,7 +21,17 @@ public class BowlingGame {
         for (int frame = 1; frame < 11; frame++) {
             score += rolls[startOfFrameIndex] + rolls[++startOfFrameIndex];
 
-        }
+            if (rolls[0] + rolls[1] == 10)
+                score = 10 + rolls[2] + rolls[2];
+
+            else if (rolls[0] == 10)
+                score = 10 + rolls[1] + rolls [2] + rolls[1] + rolls [2];
+
+            else
+                score = rolls[0] + rolls[1] + rolls[2] + rolls[3] + rolls[4] + rolls[5] + rolls[6] + rolls[7] + rolls[8] + rolls[9] + rolls[10] + rolls[11] + rolls[12] + rolls[13] + rolls[14] + rolls[15] + rolls[16] + rolls[17] + rolls[18] + rolls[19];
+            }
+
+
 //            score += rolls[0] + rolls[1];
 //            score += rolls[2] + rolls[3];
 //            score += rolls[4] + rolls[5];

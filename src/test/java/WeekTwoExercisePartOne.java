@@ -70,7 +70,7 @@ public class WeekTwoExercisePartOne {
     }
 
     @Test
-    @Disabled
+    //@Disabled
     public void whenRollingStrikeFrameScoreIsTenPlusNextTwoRolls() {
         bowlingGame.roll(10);
         bowlingGame.roll(7);
@@ -82,7 +82,7 @@ public class WeekTwoExercisePartOne {
         assertEquals(26, actual);
     }
 
-    //TODO Response: Why don't we need any more tests than these?
+    //TODO Response: Why don't we need any more tests than these? answer: They cover all scenarios for open frames, strikes and spares
 
     private void rollMany(int rollCount, int pins) {
         for(int i = 0; i < rollCount; i++) {
