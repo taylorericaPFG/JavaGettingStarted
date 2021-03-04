@@ -5,27 +5,15 @@ public class FizzBuzz {
         result = String.valueOf(number);
         int divisibleByThree = number % 3;
         int divisibleByFive = number % 5;
-        if (divisibleByThree == 0) {
+        if (divisibleByThree == 0 && divisibleByFive == 0){
+            result = "FizzBuzz";
+        }
+        else if (divisibleByThree == 0) {
             result = "Fizz";
         }
-        else if (divisibleByFive ==0){
+        else if (divisibleByFive == 0){
             result = "Buzz";
         }
-
-
-//        switch (number) {
-//            case 1:
-//                result = "1";
-//                break;
-//            case 2:
-//                result = "2";
-//                break;
-//            case 3:
-//                result = "Fizz";
-//                break;
-//            case :
-//                result = "Fizz";
-
 
         return result;
 
