@@ -9,7 +9,9 @@ public class FizzBuzz {
             case 2:
                 result = "2";
                 break;
-
+            case 3:
+                result = "Fizz";
+                break;
 
 
         }
