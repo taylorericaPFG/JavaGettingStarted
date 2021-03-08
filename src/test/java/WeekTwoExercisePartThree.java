@@ -61,7 +61,7 @@ public class WeekTwoExercisePartThree {
     }
 
     @Test
-    @Disabled
+    //@Disabled
     public void sendingTwentySixteenReturnsOnlyOneFridayTheThirteenth() {
         // TODO: Implement the code to make this test pass
         // TODO: don't forget to commit after passing the test
@@ -117,6 +117,19 @@ public class WeekTwoExercisePartThree {
 
     public LocalDate[] unluckyDatesByYear(int year) {
         LocalDate[] localDates = new LocalDate[12];
+        int month = 1;
+        int day = 13;
+        int numberUnluckyDates = 0;
+        LocalDate unluckyDate;
+        for(int i = 0; i < 12; i++) {
+            String dayOfWeek = LocalDate.of(year, month, day).getDayOfWeek().name();
+            if (dayOfWeek == "FRIDAY"){
+                unluckyDate = LocalDate.of (year,month,day);
+                localDates[numberUnluckyDates] = unluckyDate;
+                numberUnluckyDates++;
+            }
+            month++;
+        }
 
         return localDates;
     }
