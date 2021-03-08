@@ -1,4 +1,5 @@
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 
 import org.junit.jupiter.api.Disabled;
@@ -36,7 +37,6 @@ public class WeekTwoExercisePartThree {
         // TODO: Implement the code to make this test pass
         // TODO: don't forget to commit after passing the test
         boolean actual = isUnluckyDate(2019, 9, 13);
-
         assertTrue(actual);
     }
 
@@ -122,6 +122,10 @@ public class WeekTwoExercisePartThree {
     }
 
     public boolean isUnluckyDate(int year, int month, int day) {
-        return true;
+        String dayOfWeek = LocalDate.of(year, month, day).getDayOfWeek().name();
+        if (dayOfWeek == "FRIDAY")
+            return true;
+        else
+            return false;
     }
 }
