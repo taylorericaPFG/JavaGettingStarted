@@ -98,10 +98,17 @@ public class WeekTwoExercisePartThree {
     }
 
     @Test
-    @Disabled
+    //@Disabled
     public void sendingTwentyFifteenReturnsThreeFridayTheThirteenths() {
         //  TODO: write this test and, if necessary, make any changes to make it pass
         //  TODO: don't forget to commit after passing the test
+        LocalDate[] actualDates = unluckyDatesByYear(2015);
+        int actual = 0;
+        for (int i = 0; i < actualDates.length; i++)
+            if (actualDates[i] != null)
+                actual ++;
+
+        assertEquals(3, actual);
     }
 
     // TODO Implementation Implement your changes to make the tests pass here...
