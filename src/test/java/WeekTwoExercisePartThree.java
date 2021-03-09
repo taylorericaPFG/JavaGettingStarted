@@ -84,26 +84,17 @@ public class WeekTwoExercisePartThree {
     }
 
     @Test
-    @Disabled
+    //@Disabled
     public void sendingTwentyNinteenReturnsTwoFridayTheThirteenths() {
         //  TODO: write this test and, if necessary, make any changes to make it pass
         //  TODO: don't forget to commit after passing the test
-        LocalDate[] actual = unluckyDatesByYear(2019);
-        LocalDate[] expected = new LocalDate[]{
-                LocalDate.of(2019, 9, 13),
-                LocalDate.of(2019, 12, 13),
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null};
+        LocalDate[] actualDates = unluckyDatesByYear(2019);
+        int actual = 0;
+        for (int i = 0; i < actualDates.length; i++)
+            if (actualDates[i] != null)
+            actual ++;
 
-        assertEquals(2, expected.length);
+        assertEquals(2, actual);
     }
 
     @Test
@@ -136,9 +127,6 @@ public class WeekTwoExercisePartThree {
 
     public boolean isUnluckyDate(int year, int month, int day) {
         String dayOfWeek = LocalDate.of(year, month, day).getDayOfWeek().name();
-        if (dayOfWeek == "FRIDAY")
-            return true;
-        else
-            return false;
+        return dayOfWeek == "FRIDAY";
     }
 }
