@@ -88,11 +88,8 @@ public class WeekTwoExercisePartThree {
     public void sendingTwentyNinteenReturnsTwoFridayTheThirteenths() {
         //  TODO: write this test and, if necessary, make any changes to make it pass
         //  TODO: don't forget to commit after passing the test
-        LocalDate[] actualDates = unluckyDatesByYear(2019);
-        int actual = 0;
-        for (int i = 0; i < actualDates.length; i++)
-            if (actualDates[i] != null)
-            actual ++;
+        int passYear = 0;
+        int actual = actualCount(2019);
 
         assertEquals(2, actual);
     }
@@ -102,14 +99,13 @@ public class WeekTwoExercisePartThree {
     public void sendingTwentyFifteenReturnsThreeFridayTheThirteenths() {
         //  TODO: write this test and, if necessary, make any changes to make it pass
         //  TODO: don't forget to commit after passing the test
-        LocalDate[] actualDates = unluckyDatesByYear(2015);
-        int actual = 0;
-        for (int i = 0; i < actualDates.length; i++)
-            if (actualDates[i] != null)
-                actual ++;
+
+        int passYear = 0;
+        int actual = actualCount(2015);
 
         assertEquals(3, actual);
     }
+
 
     // TODO Implementation Implement your changes to make the tests pass here...
 
@@ -132,11 +128,19 @@ public class WeekTwoExercisePartThree {
         return localDates;
     }
 
+    public int actualCount(int passYear){
+        LocalDate[] actualDates = unluckyDatesByYear(passYear);
+        int actual = 0;
+        for (int i = 0; i < actualDates.length; i++)
+            if (actualDates[i] != null) //this means not equal to null
+                actual ++;
+        return actual;
+    }
+
     public boolean isUnluckyDate(int year, int month, int day) {
         String dayOfWeek = LocalDate.of(year, month, day).getDayOfWeek().name();
         return dayOfWeek == "FRIDAY";
     }
-
 
 
 }
