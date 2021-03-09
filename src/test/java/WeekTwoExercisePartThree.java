@@ -136,4 +136,7 @@ public class WeekTwoExercisePartThree {
         String dayOfWeek = LocalDate.of(year, month, day).getDayOfWeek().name();
         return dayOfWeek == "FRIDAY";
     }
+
+
+
 }
