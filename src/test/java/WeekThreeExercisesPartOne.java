@@ -117,6 +117,45 @@ public class WeekThreeExercisesPartOne {
         two.setCategory("Children's Fiction");
         assertEquals("Children's Fiction", two.getCategory());
     }
+
+    @Test
+    public void songTitle(){
+        Song numberOne = new Song ("Pretty Woman");
+        assertEquals("Pretty Woman", numberOne.getTitle());
+    }
+
+    @Test
+    public void songWriterName(){
+        Song numberOne = new Song ("", "Roy Orbison");
+        assertEquals("Roy Orbison", numberOne.getSongWriter());
+    }
+
+    @Test
+    public void songReleaseDate(){
+        Song numberOne = new Song ("", "", "1964-01-01");
+        assertEquals("1964-01-01", numberOne.getReleaseDate());
+    }
+
+    @Test
+    public void songTitleSetTest() {
+        Song two = new Song("");
+        two.setTitle("Crazy");
+        assertEquals("Crazy", two.getTitle());
+    }
+
+    @Test
+    public void writerSetTest() {
+        Song two = new Song("", "");
+        two.setSongWriter("Willie Nelson");
+        assertEquals("Willie Nelson", two.getSongWriter());
+    }
+
+    @Test
+    public void songReleaseDateSetTest() {
+        Song two = new Song("", "", "");
+        two.setReleaseDate("1961-10-16");
+        assertEquals("1961-10-16", two.getReleaseDate());
+    }
 }
 
 
