@@ -3,7 +3,7 @@
 public class Book {
 
     private String title;
-    private String isbnNumber;
+    private int isbnNumber;
     private String datePublished;
     private String author;
     private String category;
@@ -20,11 +20,11 @@ public class Book {
         this.title = title;
     }
 
-    public String getIsbnNumber(){
+    public int getIsbnNumber(){
         return isbnNumber;
     }
 
-    public void setIsbnNumber(String isbnNumber) {
+    public void setIsbnNumber(int isbnNumber) {
         this.isbnNumber = isbnNumber;
     }
 
@@ -50,5 +50,31 @@ public class Book {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public Book (String title, String author, int isbnNumber, String datePublished, String category) {
+        this(title);
+        this.author = author;
+        this.isbnNumber = isbnNumber;
+        this.datePublished = datePublished;
+        this.category = category;
+    }
+
+    public Book (String title, String author){
+        this(title);
+        this.author = author;
+    }
+
+    public Book (String title, String author, int isbnNumber) {
+        this(title);
+        this.author = author;
+        this.isbnNumber = isbnNumber;
+    }
+
+    public Book (String title, String author, int isbnNumber, String datePublished) {
+        this(title);
+        this.author = author;
+        this.isbnNumber = isbnNumber;
+        this.datePublished = datePublished;
     }
 }

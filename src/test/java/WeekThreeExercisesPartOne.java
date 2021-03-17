@@ -52,6 +52,71 @@ public class WeekThreeExercisesPartOne {
         assertEquals(8, georgia.getNumberOfBooks());
     }
 
+    @Test
+    public void bookName(){
+        Book one = new Book ("The Little Engine That Could");
+        assertEquals("The Little Engine That Could", one.getTitle());
+    }
+
+    @Test
+    public void bookAuthor(){
+        Book one = new Book ("The Little Engine That Could", "Watty Piper");
+        assertEquals("Watty Piper", one.getAuthor());
+    }
+
+    @Test
+    public void bookIsbnNumber() {
+        Book one = new Book("a", "b" , 123456);
+        assertEquals(123456, one.getIsbnNumber());
+    }
+
+    @Test
+    public void bookDatePublished() {
+        Book one = new Book("a", "b" , 0, "1930-01-01");
+        assertEquals("1930-01-01", one.getDatePublished());
+    }
+
+
+    @Test
+    public void bookCategory() {
+        Book one = new Book("a", "b" , 0, "", "Fiction");
+        assertEquals("Fiction", one.getCategory());
+    }
+
+    @Test
+    public void titleSetTest() {
+        Book two = new Book("");
+        two.setTitle("The Very Hungry Caterpillar");
+        assertEquals("The Very Hungry Caterpillar", two.getTitle());
+    }
+
+    @Test
+    public void authorSetTest() {
+        Book two = new Book("", "");
+        two.setAuthor("Eric Carle");
+        assertEquals("Eric Carle", two.getAuthor());
+    }
+
+    @Test
+    public void isbnSetTest() {
+        Book two = new Book("", "", 0);
+        two.setIsbnNumber(246886420);
+        assertEquals(246886420, two.getIsbnNumber());
+    }
+
+    @Test
+    public void dateSetTest() {
+        Book two = new Book("", "", 0, "");
+        two.setDatePublished("1969-06-03");
+        assertEquals("1969-06-03", two.getDatePublished());
+    }
+
+    @Test
+    public void categorySetTest() {
+        Book two = new Book("", "", 0, "", "");
+        two.setCategory("Children's Fiction");
+        assertEquals("Children's Fiction", two.getCategory());
+    }
 }
 
 
