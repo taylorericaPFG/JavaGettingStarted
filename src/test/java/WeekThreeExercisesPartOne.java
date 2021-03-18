@@ -156,6 +156,46 @@ public class WeekThreeExercisesPartOne {
         two.setReleaseDate("1961-10-16");
         assertEquals("1961-10-16", two.getReleaseDate());
     }
+
+    @Test
+    public void returnSongWriterNameTest(){
+        SongWriter writerOne = new SongWriter ("Johnny Cash");
+        assertEquals("Johnny Cash", writerOne.getWriterName());
+    }
+
+    @Test
+    public void returnSongNameTest(){
+        SongWriter writerOne = new SongWriter ("", "Walk The Line");
+        assertEquals("Walk The Line", writerOne.getSongName());
+    }
+
+    @Test
+    public void returnNumberOfSongsTest(){
+        SongWriter writerOne = new SongWriter ("", "", 25);
+        assertEquals(25, writerOne.getNumberOfSongs());
+    }
+
+    @Test
+    public void setSongWriterTest() {
+        SongWriter writerTwo = new SongWriter("");
+        writerTwo.setWriterName("Billy Joel");
+        assertEquals("Billy Joel", writerTwo.getWriterName());
+    }
+
+    @Test
+    public void setSongNameTest() {
+        SongWriter writertwo = new SongWriter("", "");
+        writertwo.setSongName("Piano Man");
+        assertEquals("Piano Man", writertwo.getSongName());
+    }
+
+    @Test
+    public void setNumberOfSongsTest() {
+        SongWriter writertwo = new SongWriter("", "", 0);
+        writertwo.setNumberOfSongs(30);
+        assertEquals(30, writertwo.getNumberOfSongs());
+    }
+
 }
 
 
