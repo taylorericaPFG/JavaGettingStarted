@@ -5,6 +5,7 @@ public class Song {
     private String title;
     private String songWriter;
     private String releaseDate;
+    private String randomWords;
 
     Song (String title){
         this.title = title;
@@ -43,6 +44,14 @@ public class Song {
     public Song (String title, String songWriter) {
         this(title);
         this.songWriter = songWriter;
+    }
+
+    public void setRandomWords(){
+        this.randomWords = "These are some random words";
+    }
+
+    public String getRandomWords(){
+        return randomWords;
     }
 
 

@@ -196,6 +196,35 @@ public class WeekThreeExercisesPartOne {
         assertEquals(30, writertwo.getNumberOfSongs());
     }
 
+    @Test
+    public void setNumberOfSongsTest2() {
+        SongWriter writertwo = new SongWriter("", "", 0);
+        writertwo.setWriterName("Writer Dude");
+        writertwo.setNumberOfSongs(15);
+        assertEquals("Writer Dude", writertwo.getWriterName());
+        assertEquals(15, writertwo.getNumberOfSongs());
+    }
+
+    @Test
+    public void displayNumberOfSongsTest() {
+        SongWriter writertwo = new SongWriter("", "", 0);
+        writertwo.setNumberOfSongs(30);
+        System.out.println(writertwo.getNumberOfSongs());
+    }
+
+    @Test
+    public void setSongNameTest2() {
+        SongWriter writerTwo = new SongWriter("Elton John", "Rocket Man");
+       System.out.println((writerTwo.getWriterName()) + (writerTwo.getSongName()));
+    }
+
+    @Test
+    public void returnRandomWordsTest(){
+        Song writerOne = new Song ("");
+        writerOne.setRandomWords();
+        System.out.println(writerOne.getRandomWords());
+    }
+
 }
 
 
