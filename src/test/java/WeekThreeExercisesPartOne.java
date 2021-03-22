@@ -159,12 +159,6 @@ public class WeekThreeExercisesPartOne {
     }
 
     @Test
-    public void returnNumberOfSongsTest(){
-        SongWriter writerOne = new SongWriter ("Johnny Cash", "Walk The Line", 25);
-        assertEquals(25, writerOne.getNumberOfSongs());
-    }
-
-    @Test
     public void setSongWriterTest() {
         SongWriter writerTwo = new SongWriter("");
         writerTwo.setWriterName("Billy Joel");
@@ -179,32 +173,25 @@ public class WeekThreeExercisesPartOne {
     }
 
     @Test
-    public void setNumberOfSongsTest() {
-        SongWriter writertwo = new SongWriter("", "", 0);
-        writertwo.setNumberOfSongs(30);
-        assertEquals(30, writertwo.getNumberOfSongs());
-    }
-
-    @Test
-    public void setNumberOfSongsTest2() {
-        SongWriter writertwo = new SongWriter("", "", 0);
-        writertwo.setWriterName("Writer Dude");
-        writertwo.setNumberOfSongs(15);
-        assertEquals("Writer Dude", writertwo.getWriterName());
-        assertEquals(15, writertwo.getNumberOfSongs());
-    }
-
-    @Test
-    public void displayNumberOfSongsTest() {
-        SongWriter writertwo = new SongWriter("", "", 0);
-        writertwo.setNumberOfSongs(30);
-        System.out.println(writertwo.getNumberOfSongs());
-    }
-
-    @Test
     public void setSongNameTest2() {
         SongWriter writerTwo = new SongWriter("Elton John", "Rocket Man");
        System.out.println((writerTwo.getWriterName()) + " sings " + (writerTwo.getSongName()));
+    }
+
+    @Test
+    public void addSongTest(){
+        Song songOne = new Song ("Song Title One");
+        Song songTwo = new Song ("Song Title Two");
+        ArrayList<Song> songs = new ArrayList<>();
+
+        songs.add(songOne);
+        songs.add(songTwo);
+
+        SongWriter writerDude = new SongWriter("Writer Dude", songs);
+        ArrayList<Song> newSongs = writerDude.getListOfSongs();
+        newSongs.get(1).getTitle();
+        assertEquals(2, writerDude.getNumberOfSongs());
+
     }
 
     @Test
@@ -245,6 +232,14 @@ public class WeekThreeExercisesPartOne {
         ArrayList<Book> newBooks = erica.getListOfBooks();
         newBooks.get(1).getTitle();
         assertEquals(2, erica.getNumberOfBooks());
+
+    }
+
+    @Test
+    public void addBookTest2(){
+        Author noBooks = new Author("Nobook Author");
+        ArrayList<Book> books = noBooks.getListOfBooks();
+        assertEquals(0, noBooks.getNumberOfBooks());
 
     }
 

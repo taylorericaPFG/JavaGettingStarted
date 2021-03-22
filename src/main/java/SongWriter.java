@@ -1,10 +1,10 @@
-
+import java.util.ArrayList;
 
 public class SongWriter {
 
     private String writerName;
     private String songName;
-    private int numberOfSongs;
+    private ArrayList<Song> songs = new ArrayList<>();
 
     SongWriter (String writerName){
         this.writerName = writerName;
@@ -26,23 +26,26 @@ public class SongWriter {
         return songName;
     }
 
-    public void setNumberOfSongs(int numberOfSongs) {
-        this.numberOfSongs = numberOfSongs;
+    public int getNumberOfSongs() {
+        return songs.size();
     }
 
-    public int getNumberOfSongs() {
-        return numberOfSongs;
+    public void addSongs(Song song){
+        songs.add(song);
+    }
+
+    public ArrayList<Song> getListOfSongs(){
+        return (ArrayList<Song>) songs.clone();
+    }
+
+    public SongWriter (String writerName, ArrayList<Song> songs) {
+        this(writerName);
+        this.songs = (ArrayList<Song>) songs.clone();
     }
 
     public SongWriter (String writerName, String songName) {
         this(writerName);
         this.songName = songName;
-    }
-
-    public SongWriter (String writerName, String songName, int numberOfSongs) {
-        this(writerName);
-        this.songName = songName;
-        this.numberOfSongs = numberOfSongs;
     }
 
 }
