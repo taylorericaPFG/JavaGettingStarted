@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class WeekThreeExercisesPartOne {
@@ -33,23 +35,10 @@ public class WeekThreeExercisesPartOne {
     }
 
     @Test
-    public void numberBooksForAuthor() {
-        Author erica = new Author("Erica Taylor", 7);
-        assertEquals(7, erica.getNumberOfBooks());
-    }
-
-    @Test
-    public void numberBooksForAuthor2() {
+    public void authorName2() {
         Author barb = new Author("");
         barb.setName("Barb Hansen");
         assertEquals("Barb Hansen", barb.getName());
-    }
-
-    @Test
-    public void numberBooksForAuthor3() {
-        Author georgia = new Author("", 0);
-        georgia.setNumberOfBooks(8);
-        assertEquals(8, georgia.getNumberOfBooks());
     }
 
     @Test
@@ -145,14 +134,14 @@ public class WeekThreeExercisesPartOne {
 
     @Test
     public void writerSetTest() {
-        Song two = new Song("", "");
+        Song two = new Song("Crazy", "");
         two.setSongWriter("Willie Nelson");
         assertEquals("Willie Nelson", two.getSongWriter());
     }
 
     @Test
     public void songReleaseDateSetTest() {
-        Song two = new Song("", "", "");
+        Song two = new Song("Crazy", "Willie Nelson", "");
         two.setReleaseDate("1961-10-16");
         assertEquals("1961-10-16", two.getReleaseDate());
     }
@@ -165,13 +154,13 @@ public class WeekThreeExercisesPartOne {
 
     @Test
     public void returnSongNameTest(){
-        SongWriter writerOne = new SongWriter ("", "Walk The Line");
+        SongWriter writerOne = new SongWriter ("Johnny Cash", "Walk The Line");
         assertEquals("Walk The Line", writerOne.getSongName());
     }
 
     @Test
     public void returnNumberOfSongsTest(){
-        SongWriter writerOne = new SongWriter ("", "", 25);
+        SongWriter writerOne = new SongWriter ("Johnny Cash", "Walk The Line", 25);
         assertEquals(25, writerOne.getNumberOfSongs());
     }
 
@@ -215,15 +204,50 @@ public class WeekThreeExercisesPartOne {
     @Test
     public void setSongNameTest2() {
         SongWriter writerTwo = new SongWriter("Elton John", "Rocket Man");
-       System.out.println((writerTwo.getWriterName()) + (writerTwo.getSongName()));
+       System.out.println((writerTwo.getWriterName()) + " sings " + (writerTwo.getSongName()));
     }
 
     @Test
     public void returnRandomWordsTest(){
         Song writerOne = new Song ("");
-        writerOne.setRandomWords();
+        writerOne.setRandomWords("These are random words");
         System.out.println(writerOne.getRandomWords());
     }
+
+    @Test
+    public void validateAuthorTest(){
+        Book bookOne = new Book ("Title One");
+        Book bookTwo = new Book ("Title Two");
+        ArrayList<Book> books = new ArrayList<>();
+
+        books.add(bookOne);
+        books.add(bookTwo);
+
+        Author erica = new Author("Erica Taylor", books);
+        ArrayList<Book> newBooks = erica.getListOfBooks();
+        newBooks.add(new Book("Seven Samurai"));
+        newBooks.get(1).setTitle("Bad Title");
+        books.clear();
+        assertEquals(2, erica.getNumberOfBooks());
+
+    }
+
+    @Test
+    public void addBookTest(){
+        Book bookOne = new Book ("Title One");
+        Book bookTwo = new Book ("Title Two");
+        ArrayList<Book> books = new ArrayList<>();
+
+        books.add(bookOne);
+        books.add(bookTwo);
+
+        Author erica = new Author("Erica Taylor", books);
+        ArrayList<Book> newBooks = erica.getListOfBooks();
+        newBooks.get(1).getTitle();
+        assertEquals(2, erica.getNumberOfBooks());
+
+    }
+
 
 }
 

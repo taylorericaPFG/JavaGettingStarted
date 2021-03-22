@@ -46,8 +46,8 @@ public class Song {
         this.songWriter = songWriter;
     }
 
-    public void setRandomWords(){
-        this.randomWords = "These are some random words";
+    public void setRandomWords(String words){
+        this.randomWords = words;
     }
 
     public String getRandomWords(){

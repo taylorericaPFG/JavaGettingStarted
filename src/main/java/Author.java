@@ -1,9 +1,10 @@
-
+import java.util.ArrayList;
+import java.util.List;
 
 public class Author {
 
     private String name;
-    private int numberOfBooks;
+    private ArrayList<Book> books = new ArrayList<>();
 
     Author(String name){
         this.name = name;
@@ -18,16 +19,19 @@ public class Author {
     }
 
     public int getNumberOfBooks() {
-        return numberOfBooks;
+        return books.size();
+    }
+    public void addBook(Book book){
+        books.add(book);
     }
 
-    public void setNumberOfBooks(int numberOfBooks) {
-        this.numberOfBooks = numberOfBooks;
+    public ArrayList<Book> getListOfBooks(){
+        return (ArrayList<Book>) books.clone();
     }
 
-    public Author (String name, int numberOfBooks) {
+    public Author (String name, ArrayList<Book> books) {
         this(name);
-        this.numberOfBooks = numberOfBooks;
+        this.books = (ArrayList<Book>) books.clone();
     }
 
 }
